@@ -1,0 +1,11 @@
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Mappers.deps.json
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Mappers.runtimeconfig.json
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Mappers.runtimeconfig.dev.json
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Mappers.dll
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Mappers.pdb
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.AssemblyInfoInputs.cache
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.AssemblyInfo.cs
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.csproj.CoreCompileInputs.cache
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.dll
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.pdb
+C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.genruntimeconfig.cache
