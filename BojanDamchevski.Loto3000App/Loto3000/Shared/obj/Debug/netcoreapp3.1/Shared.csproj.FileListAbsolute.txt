@@ -9,3 +9,15 @@ C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netco
 C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.dll
 C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.pdb
 C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.genruntimeconfig.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\bin\Debug\netcoreapp3.1\Shared.deps.json
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\bin\Debug\netcoreapp3.1\Shared.runtimeconfig.json
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\bin\Debug\netcoreapp3.1\Shared.runtimeconfig.dev.json
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\bin\Debug\netcoreapp3.1\Shared.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\bin\Debug\netcoreapp3.1\Shared.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.csproj.AssemblyReference.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.AssemblyInfoInputs.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.AssemblyInfo.cs
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.csproj.CoreCompileInputs.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Shared\obj\Debug\netcoreapp3.1\Shared.genruntimeconfig.cache

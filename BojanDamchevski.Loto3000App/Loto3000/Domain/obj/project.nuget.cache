@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9JNX2LugEas1iwMJddxQERNNS1/g4jvjnsJ9pC0+PCvBhbtCuso+UNwdRQkK1Bz2YzWXlIxW7ek0eq3tJmx9rg==",
+  "dgSpecHash": "lEo5yRYDwaMWseOmnkdQltvlke/+CWFAxr5Pbe65G3JOwZafy1m3YLel5S/9vnsANAraDlPKn3REzkGdxCTG6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Com\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\Com\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

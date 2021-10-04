@@ -5,7 +5,8 @@ namespace Services.Interfaces
 {
     public interface IUserService
     {
+        void Register(RegisterUserDTO registerUserDTO);
+        string Login(LoginUserDTO loginUserDTO);
         void InsertNumbers(List<int> numbersChoice, int id);
-        void AddUser(AddUserDTO userDTO);
     }
 }

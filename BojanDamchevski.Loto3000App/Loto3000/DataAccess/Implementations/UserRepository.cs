@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DataAccess.Implementations
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IUserRepository
     {
         private LotoAppDbContext _DbContext;
         public UserRepository(LotoAppDbContext dbContext)
@@ -33,10 +33,20 @@ namespace DataAccess.Implementations
                 .FirstOrDefault(x => x.Id == id);
         }
 
+        public User GetUserByUsername(string username)
+        {
+            return _DbContext.Users.FirstOrDefault(x => x.Username.ToLower() == username.ToLower());
+        }
+
         public void Insert(User entity)
         {
             _DbContext.Users.Add(entity);
             _DbContext.SaveChanges();
+        }
+
+        public User LoginUser(string username, string password)
+        {
+            return _DbContext.Users.FirstOrDefault(x => x.Username.ToLower() == username.ToLower() && x.Password == password);
         }
 
         public void Update(User entity)

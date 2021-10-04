@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DataAccess.Implementations
 {
-    public class AdminRepository : IRepository<Admin>
+    public class AdminRepository : IAdminRepository
     {
         private LotoAppDbContext _DbContext;
         public AdminRepository(LotoAppDbContext dbContext)
@@ -17,6 +17,11 @@ namespace DataAccess.Implementations
         {
             _DbContext.Admin.Remove(entity);
             _DbContext.SaveChanges();
+        }
+
+        public Admin GetAdminByUsername(string username)
+        {
+            return _DbContext.Admin.FirstOrDefault(x => x.Username.ToLower() == username.ToLower());
         }
 
         public List<Admin> GetAll()
@@ -41,6 +46,11 @@ namespace DataAccess.Implementations
         {
             _DbContext.Admin.Add(entity);
             _DbContext.SaveChanges();
+        }
+
+        public Admin LoginAdmin(string username, string password)
+        {
+            return _DbContext.Admin.FirstOrDefault(x => x.Username.ToLower() == username.ToLower() && x.Password == password);
         }
 
         public void Update(Admin entity)

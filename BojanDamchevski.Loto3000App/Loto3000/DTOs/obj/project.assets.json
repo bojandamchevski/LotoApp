@@ -5002,11 +5002,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\DTOs.csproj",
+      "projectUniqueName": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\DTOs.csproj",
       "projectName": "DTOs",
-      "projectPath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\DTOs.csproj",
+      "projectPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\DTOs.csproj",
       "packagesPath": "C:\\Users\\Com\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\obj\\",
+      "outputPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Com\\AppData\\Roaming\\NuGet\\NuGet.Config",

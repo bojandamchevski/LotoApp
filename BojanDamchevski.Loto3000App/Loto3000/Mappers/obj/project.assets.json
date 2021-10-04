@@ -1280,6 +1280,34 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1"
+        },
+        "compile": {
+          "bin/placeholder/DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTOs.dll": {}
+        }
       }
     }
   },
@@ -4986,10 +5014,22 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "DTOs/1.0.0": {
+      "type": "project",
+      "path": "../DTOs/DTOs.csproj",
+      "msbuildProject": "../DTOs/DTOs.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "DTOs >= 1.0.0",
+      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.1",
@@ -5002,11 +5042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Mappers\\Mappers.csproj",
+      "projectUniqueName": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Mappers\\Mappers.csproj",
       "projectName": "Mappers",
-      "projectPath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Mappers\\Mappers.csproj",
+      "projectPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Mappers\\Mappers.csproj",
       "packagesPath": "C:\\Users\\Com\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Mappers\\obj\\",
+      "outputPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Mappers\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Com\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5022,7 +5062,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\DTOs.csproj": {
+              "projectPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\DTOs\\DTOs.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

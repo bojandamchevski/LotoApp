@@ -10,3 +10,15 @@ C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcore
 C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.dll
 C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.pdb
 C:\Users\Com\Desktop\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.genruntimeconfig.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\bin\Debug\netcoreapp3.1\DTOs.deps.json
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\bin\Debug\netcoreapp3.1\DTOs.runtimeconfig.json
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\bin\Debug\netcoreapp3.1\DTOs.runtimeconfig.dev.json
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\bin\Debug\netcoreapp3.1\DTOs.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\bin\Debug\netcoreapp3.1\DTOs.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.AssemblyReference.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfoInputs.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.AssemblyInfo.cs
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.csproj.CoreCompileInputs.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\DTOs\obj\Debug\netcoreapp3.1\DTOs.genruntimeconfig.cache

@@ -26,11 +26,14 @@ namespace Services.Implementations
         }
         public List<int> MakeDraw()
         {
-            _winningNumberRepository.GetAll().Clear();
+            foreach (var item in _winningNumberRepository.GetAll())
+            {
+                _winningNumberRepository.Delete(item);
+            };
             Admin admin = _adminRepository.GetById(1);
             List<int> drawNumbers = new List<int>();
             Session session = new Session();
-            for (int i = 0; i <= 37 && i >= 1; i++)
+            for (int i = 0; i <= 7 && i >= 1; i++)
             {
                 Random random = new Random();
                 int randomNumber = random.Next(1, 37);
@@ -53,22 +56,31 @@ namespace Services.Implementations
                 _winningNumberRepository.Insert(winningNumber);
             }
             List<User> users = _userRepository.GetAll();
+            foreach (User user in users)
+            {
+                user.LotoNumbers = new List<LotoNumber>();
+                _userRepository.Update(user);
+            }
             foreach (var user in users)
             {
+                List<int> nums = new List<int>();
                 foreach (var lotoNumbersChoice in user.LotoNumbers)
                 {
                     for (int k = 0; k <= drawNumbers.Count; k++)
                     {
                         if (lotoNumbersChoice.LotoNumberChoice == drawNumbers[k])
                         {
-                            user.Prize += $" {_prizeRepository.GetById(drawNumbers[k]).PrizeType}";
+                            nums.Add(drawNumbers[k]);
                         }
                     }
+                    user.Prize += $" {_prizeRepository.GetById(nums.Count).PrizeType}";
                 }
+                _userRepository.Update(user);
             }
-            admin.Draws.Add(draw);
             draw.Admin = admin;
             draw.AdminId = admin.Id;
+            admin.Draws.Add(draw);
+            _adminRepository.Update(admin);
             _sessionRepository.Insert(session);
             _drawRepository.Insert(draw);
             return drawNumbers;

@@ -10,6 +10,8 @@ namespace Domain.Models
         public Admin Admin { get; set; }
         public int AdminId { get; set; }
         public string Prize { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public User()
         {

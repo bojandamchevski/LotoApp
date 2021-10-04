@@ -89,22 +89,46 @@ namespace DataAccess
                 .WithMany(x => x.LotoNumbers)
                 .HasForeignKey(x => x.UserId);
 
+            //Admin Validations
+
+            modelBuilder.Entity<Admin>()
+                .Property(x => x.Username)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Admin>()
+                .Property(x => x.Password)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            //User Validations
+
+            modelBuilder.Entity<User>()
+               .Property(x => x.Username)
+               .HasMaxLength(50)
+               .IsRequired();
+
+            modelBuilder.Entity<User>()
+                .Property(x => x.Password)
+                .HasMaxLength(50)
+                .IsRequired();
+
             //Prize seeding
 
             modelBuilder.Entity<Prize>()
                 .HasData(new Prize()
                 {
-                    Id = 1,
+                    Id = 7,
                     PrizeType = "Car"
                 },
                 new Prize()
                 {
-                    Id = 2,
+                    Id = 6,
                     PrizeType = "Vacation"
                 },
                 new Prize()
                 {
-                    Id = 3,
+                    Id = 5,
                     PrizeType = "TV"
                 },
                 new Prize()
@@ -114,7 +138,7 @@ namespace DataAccess
                 },
                 new Prize()
                 {
-                    Id = 5,
+                    Id = 3,
                     PrizeType = "50$ GiftCard"
                 });
         }

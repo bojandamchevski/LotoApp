@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj": {
+    "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Com\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Com\\Desktop\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Com\\Desktop\\Projects\\LotoApp\\BojanDamchevski.Loto3000App\\Loto3000\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Com\\AppData\\Roaming\\NuGet\\NuGet.Config",

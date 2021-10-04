@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Shared;
 
 namespace Loto3000.App
 {

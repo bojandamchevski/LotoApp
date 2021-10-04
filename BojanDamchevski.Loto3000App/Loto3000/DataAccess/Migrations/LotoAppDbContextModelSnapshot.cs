@@ -29,6 +29,16 @@ namespace DataAccess.Migrations
                     b.Property<string>("AdminName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
                     b.HasKey("Id");
 
                     b.ToTable("Admin");
@@ -81,9 +91,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("PrizeNumber")
-                        .HasColumnType("int");
-
                     b.Property<string>("PrizeType")
                         .HasColumnType("nvarchar(max)");
 
@@ -94,32 +101,27 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            PrizeNumber = 16,
+                            Id = 7,
                             PrizeType = "Car"
                         },
                         new
                         {
-                            Id = 2,
-                            PrizeNumber = 21,
+                            Id = 6,
                             PrizeType = "Vacation"
                         },
                         new
                         {
-                            Id = 3,
-                            PrizeNumber = 1,
+                            Id = 5,
                             PrizeType = "TV"
                         },
                         new
                         {
                             Id = 4,
-                            PrizeNumber = 24,
                             PrizeType = "100$ Gift Card"
                         },
                         new
                         {
-                            Id = 5,
-                            PrizeNumber = 19,
+                            Id = 3,
                             PrizeType = "50$ GiftCard"
                         });
                 });
@@ -163,6 +165,19 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Prize")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
