@@ -1,4 +1,5 @@
-﻿using DTOs.UserDTOs;
+﻿using DTOs.LotoNumbersDTOs;
+using DTOs.UserDTOs;
 using System.Collections.Generic;
 
 namespace Services.Interfaces
@@ -7,6 +8,6 @@ namespace Services.Interfaces
     {
         void Register(RegisterUserDTO registerUserDTO);
         string Login(LoginUserDTO loginUserDTO);
-        void InsertNumbers(List<int> numbersChoice, int id);
+        void InsertNumbers(LotoNumbersDTO numbersChoice, int id);
     }
 }

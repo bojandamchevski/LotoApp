@@ -1,5 +1,6 @@
 ﻿using DataAccess.Interfaces;
 using Domain.Models;
+using DTOs.LotoNumbersDTOs;
 using DTOs.UserDTOs;
 using Mappers;
 using Microsoft.Extensions.Options;
@@ -123,13 +124,13 @@ namespace Services.Implementations
             return passwordRegex.Match(password).Success;
         }
 
-        public void InsertNumbers(List<int> numbersChoice, int id)
+        public void InsertNumbers(LotoNumbersDTO numbersChoice, int id)
         {
             User user = _userRepository.GetById(id);
-            for (int i = 0; i <= numbersChoice.Count; i++)
+            for (int i = 0; i <= numbersChoice.LotoNumbers.Count; i++)
             {
                 LotoNumber lotoNumber = new LotoNumber();
-                lotoNumber.LotoNumberChoice = numbersChoice[i];
+                lotoNumber.LotoNumberChoice = numbersChoice.LotoNumbers[i];
                 lotoNumber.User = user;
                 lotoNumber.UserId = user.Id;
                 user.LotoNumbers.Add(lotoNumber);

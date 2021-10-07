@@ -1,5 +1,6 @@
 ﻿using DataAccess.Interfaces;
 using Domain.Models;
+using DTOs.AdminDTOs;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,15 @@ namespace Services.Implementations
             _userRepository = userRepository;
             _prizeRepository = prizeRepository;
         }
+        public void Register(RegisterAdminDTO registerAdminDTO)
+        {
+            throw new NotImplementedException();
+        }
+        public string Login(LoginAdminDTO loginAdminDTO)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<int> MakeDraw()
         {
             foreach (var item in _winningNumberRepository.GetAll())
