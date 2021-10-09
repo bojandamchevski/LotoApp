@@ -12,9 +12,11 @@ namespace Domain.Models
         public string Prize { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public string Role { get; set; }
 
         public User()
         {
+            Role = "User";
             LotoNumbers = new List<LotoNumber>();
         }
     }

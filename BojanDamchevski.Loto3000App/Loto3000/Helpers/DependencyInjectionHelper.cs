@@ -22,8 +22,8 @@ namespace Helpers
 
         public static void InjectRepositories(IServiceCollection services)
         {
-            services.AddTransient<IRepository<Admin>, AdminRepository>();
-            services.AddTransient<IRepository<User>, UserRepository>();
+            services.AddTransient<IAdminRepository, AdminRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IRepository<Draw>, DrawRepository>();
             services.AddTransient<IRepository<Session>, SessionRepository>();
             services.AddTransient<IRepository<LotoNumber>, LotoNumberRepository>();

@@ -10,9 +10,11 @@ namespace Domain.Models
         public string Password { get; set; }
         public List<Draw> Draws { get; set; }
         public List<User> Users { get; set; }
+        public string Role { get; set; }
         public Admin()
         {
             AdminName = "Admin";
+            Role = "Admin";
             Users = new List<User>();
             Draws = new List<Draw>();
         }

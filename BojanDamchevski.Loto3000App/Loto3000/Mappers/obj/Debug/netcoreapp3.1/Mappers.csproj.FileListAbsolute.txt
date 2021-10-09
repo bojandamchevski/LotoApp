@@ -21,3 +21,8 @@ C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappe
 C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.dll
 C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.pdb
 C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.genruntimeconfig.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\DTOs.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\bin\Debug\netcoreapp3.1\DTOs.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Mappers\obj\Debug\netcoreapp3.1\Mappers.csproj.CopyComplete

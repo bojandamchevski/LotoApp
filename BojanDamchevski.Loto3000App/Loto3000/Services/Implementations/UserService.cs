@@ -124,16 +124,12 @@ namespace Services.Implementations
             return passwordRegex.Match(password).Success;
         }
 
-        public void InsertNumbers(LotoNumbersDTO numbersChoice, int id)
+        public void InsertNumbers(LotoNumbersDTO numbersChoice)
         {
-            User user = _userRepository.GetById(id);
             for (int i = 0; i <= numbersChoice.LotoNumbers.Count; i++)
             {
                 LotoNumber lotoNumber = new LotoNumber();
                 lotoNumber.LotoNumberChoice = numbersChoice.LotoNumbers[i];
-                lotoNumber.User = user;
-                lotoNumber.UserId = user.Id;
-                user.LotoNumbers.Add(lotoNumber);
                 _lotoNumberRepository.Insert(lotoNumber);
             }
         }

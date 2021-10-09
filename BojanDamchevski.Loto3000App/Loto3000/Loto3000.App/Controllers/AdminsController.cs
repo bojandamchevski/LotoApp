@@ -24,18 +24,41 @@ namespace Loto3000.App.Controllers
 
         [HttpPost("register-admin")]
         [AllowAnonymous]
-        //public IActionResult Register([FromBody] RegisterAdminDTO registerAdminDTO)
-        //{
-        //    try
-        //    {
-        //        _adminService.Register(registerAdminDTO);
-        //    }
-        //    catch (Exception)
-        //    {
+        public IActionResult Register([FromBody] RegisterAdminDTO registerAdminDTO)
+        {
+            try
+            {
+                _adminService.Register(registerAdminDTO);
+                return StatusCode(StatusCodes.Status201Created, "Admin registered");
+            }
+            catch (AdminException ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
-        //        throw;
-        //    }
-        //}
+        [HttpPost("login-admin")]
+        [AllowAnonymous]
+        public ActionResult<string> Login([FromBody] LoginAdminDTO loginAdminDTO)
+        {
+            try
+            {
+                string token = _adminService.Login(loginAdminDTO);
+                return StatusCode(StatusCodes.Status200OK, token);
+            }
+            catch (AdminException ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
         [HttpPost("make-draw")]
         public IActionResult GetDraw()

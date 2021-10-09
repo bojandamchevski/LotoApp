@@ -1,22 +1,33 @@
 ﻿using DataAccess.Interfaces;
 using Domain.Models;
 using DTOs.AdminDTOs;
+using Mappers;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Services.Interfaces;
+using Shared;
+using Shared.CustomExceptions;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Services.Implementations
 {
     public class AdminService : IAdminService
     {
-        private IRepository<Admin> _adminRepository;
+        private IAdminRepository _adminRepository;
         private IRepository<Draw> _drawRepository;
         private IRepository<Session> _sessionRepository;
         private IRepository<WinningNumber> _winningNumberRepository;
-        private IRepository<User> _userRepository;
+        private IUserRepository _userRepository;
         private IRepository<Prize> _prizeRepository;
-        public AdminService(IRepository<Admin> adminRepository, IRepository<Draw> drawRepository, IRepository<Session> sessionRepository, IRepository<WinningNumber> winningNumberRepository, IRepository<User> userRepository,
-            IRepository<Prize> prizeRepository)
+        IOptions<AppSettings> _options;
+        public AdminService(IAdminRepository adminRepository, IRepository<Draw> drawRepository, IRepository<Session> sessionRepository, IRepository<WinningNumber> winningNumberRepository, IUserRepository userRepository,
+            IRepository<Prize> prizeRepository, IOptions<AppSettings> options)
         {
             _adminRepository = adminRepository;
             _drawRepository = drawRepository;
@@ -24,16 +35,95 @@ namespace Services.Implementations
             _winningNumberRepository = winningNumberRepository;
             _userRepository = userRepository;
             _prizeRepository = prizeRepository;
+            _options = options;
         }
         public void Register(RegisterAdminDTO registerAdminDTO)
         {
-            throw new NotImplementedException();
+            ValidateUser(registerAdminDTO);
+            MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
+
+            byte[] passwordBytes = Encoding.ASCII.GetBytes(registerAdminDTO.Password);
+            byte[] passwordHash = mD5CryptoServiceProvider.ComputeHash(passwordBytes);
+            string hashedPassword = Encoding.ASCII.GetString(passwordHash);
+
+            Admin newAdmin = registerAdminDTO.ToAdmin();
+            newAdmin.Password = hashedPassword;
+
+            _adminRepository.Insert(newAdmin);
         }
         public string Login(LoginAdminDTO loginAdminDTO)
         {
-            throw new NotImplementedException();
+            MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
+            byte[] hashedBytes = mD5CryptoServiceProvider.ComputeHash(Encoding.ASCII.GetBytes(loginAdminDTO.Password));
+            string hashedPassword = Encoding.ASCII.GetString(hashedBytes);
+
+            Admin adminDb = _adminRepository.LoginAdmin(loginAdminDTO.Username, loginAdminDTO.Password);
+
+            if (adminDb == null)
+            {
+                throw new ResourceNotFoundException($"Could not login admin {loginAdminDTO.Username}");
+            }
+
+            JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            byte[] secretKeyBytes = Encoding.ASCII.GetBytes(_options.Value.SecretKey);
+
+            SecurityTokenDescriptor securityTokenDescriptor = new SecurityTokenDescriptor
+            {
+                Expires = DateTime.UtcNow.AddHours(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes),
+                    SecurityAlgorithms.HmacSha256Signature),
+                Subject = new ClaimsIdentity(
+                    new[]
+                    {
+                        new Claim(ClaimTypes.Name, adminDb.Username),
+                        new Claim(ClaimTypes.NameIdentifier, adminDb.Id.ToString()),
+                        new Claim(ClaimTypes.Role, adminDb.Role)
+                    })};
+
+            SecurityToken token = jwtSecurityTokenHandler.CreateToken(securityTokenDescriptor);
+            return jwtSecurityTokenHandler.WriteToken(token);
+        }
+        private void ValidateUser(RegisterAdminDTO registerAdminDTO)
+        {
+            if (string.IsNullOrEmpty(registerAdminDTO.Username) || string.IsNullOrEmpty(registerAdminDTO.Password))
+            {
+                throw new AdminException("Username and password are required fields!");
+            }
+            if (string.IsNullOrEmpty(registerAdminDTO.Role))
+            {
+                throw new AdminException("Role is a required field!");
+            }
+            if (registerAdminDTO.Username.Length > 30)
+            {
+                throw new AdminException("Username can contain maximum 30 characters!");
+            }
+            if (registerAdminDTO.AdminName.Length > 50)
+            {
+                throw new AdminException("Admin name can contain maximum 50 characters!");
+            }
+            if (!IsUserNameUnique(registerAdminDTO.Username))
+            {
+                throw new AdminException("A admin with this username already exists!");
+            }
+            if (registerAdminDTO.Password != registerAdminDTO.ConfirmedPassword)
+            {
+                throw new AdminException("The passwords do not match!");
+            }
+            if (!IsPasswordValid(registerAdminDTO.Password))
+            {
+                throw new AdminException("The password is not complex enough!");
+            }
+        }
+        private bool IsUserNameUnique(string username)
+        {
+            return _adminRepository.GetAdminByUsername(username) == null;
         }
 
+        private bool IsPasswordValid(string password)
+        {
+            Regex passwordRegex = new Regex("^(?=.*[0-9])(?=.*[a-z]).{6,20}$");
+            return passwordRegex.Match(password).Success;
+        }
         public List<int> MakeDraw()
         {
             foreach (var item in _winningNumberRepository.GetAll())

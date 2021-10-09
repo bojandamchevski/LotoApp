@@ -63,11 +63,11 @@ namespace Loto3000.App.Controllers
         }
 
         [HttpPost("enter-loto-numbers")]
-        public IActionResult EnterLotoNumbers([FromBody] LotoNumbersDTO lotoNumbersDTO, int id)
+        public IActionResult EnterLotoNumbers([FromBody] LotoNumbersDTO lotoNumbersDTO)
         {
             try
             {
-                _userService.InsertNumbers(lotoNumbersDTO, id);
+                _userService.InsertNumbers(lotoNumbersDTO);
                 return StatusCode(StatusCodes.Status200OK, "You have entered your choice of numbers.");
             }
             catch (UserException ex)

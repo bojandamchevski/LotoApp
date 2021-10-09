@@ -36,3 +36,7 @@ C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpe
 C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
 C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\obj\Debug\netcoreapp3.1\Helpers.genruntimeconfig.cache
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\bin\Debug\netcoreapp3.1\Mappers.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\bin\Debug\netcoreapp3.1\Shared.dll
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\bin\Debug\netcoreapp3.1\Mappers.pdb
+C:\Users\Com\Desktop\Projects\LotoApp\BojanDamchevski.Loto3000App\Loto3000\Helpers\bin\Debug\netcoreapp3.1\Shared.pdb
