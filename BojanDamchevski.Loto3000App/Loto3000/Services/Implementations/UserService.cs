@@ -71,6 +71,7 @@ namespace Services.Implementations
                 Subject = new ClaimsIdentity(
                     new[]
                     {
+                        new Claim(ClaimTypes.NameIdentifier, userDb.Id.ToString()),
                         new Claim(ClaimTypes.Name, userDb.Username),
                         new Claim("userFullName", $"{userDb.FirstName} {userDb.LastName}")
                     })
@@ -124,14 +125,20 @@ namespace Services.Implementations
             return passwordRegex.Match(password).Success;
         }
 
-        public void InsertNumbers(LotoNumbersDTO numbersChoice)
+        public void InsertNumbers(LotoNumbersDTO numbersChoice, string userId)
         {
+            bool isIdValid = int.TryParse(userId, out int id);
+            User userDb = _userRepository.GetById(id);
+            userDb.LotoNumbers.Clear();
+
             for (int i = 0; i <= numbersChoice.LotoNumbers.Count; i++)
             {
                 LotoNumber lotoNumber = new LotoNumber();
                 lotoNumber.LotoNumberChoice = numbersChoice.LotoNumbers[i];
                 _lotoNumberRepository.Insert(lotoNumber);
+                userDb.LotoNumbers.Add(lotoNumber);
             }
+            _userRepository.Update(userDb);
         }
     }
 }

@@ -8,6 +8,7 @@ using Shared.CustomExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Loto3000.App.Controllers
@@ -67,7 +68,9 @@ namespace Loto3000.App.Controllers
         {
             try
             {
-                _userService.InsertNumbers(lotoNumbersDTO);
+                var claims = User.Claims;
+                string userId = User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
+                _userService.InsertNumbers(lotoNumbersDTO, userId);
                 return StatusCode(StatusCodes.Status200OK, "You have entered your choice of numbers.");
             }
             catch (UserException ex)

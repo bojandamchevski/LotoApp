@@ -1,4 +1,5 @@
 ﻿using DTOs.AdminDTOs;
+using DTOs.UserDTOs;
 using System.Collections.Generic;
 
 namespace Services.Interfaces
@@ -7,6 +8,7 @@ namespace Services.Interfaces
     {
         void Register(RegisterAdminDTO registerAdminDTO);
         string Login(LoginAdminDTO loginAdminDTO);
-        List<int> MakeDraw();
+        List<int> MakeDraw(string adminId);
+        List<WinnerUserDTO> GetWinners(string adminId);
     }
 }

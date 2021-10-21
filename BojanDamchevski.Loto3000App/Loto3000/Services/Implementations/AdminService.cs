@@ -1,6 +1,7 @@
 ﻿using DataAccess.Interfaces;
 using Domain.Models;
 using DTOs.AdminDTOs;
+using DTOs.UserDTOs;
 using Mappers;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -75,8 +76,8 @@ namespace Services.Implementations
                 Subject = new ClaimsIdentity(
                     new[]
                     {
-                        new Claim(ClaimTypes.Name, adminDb.Username),
                         new Claim(ClaimTypes.NameIdentifier, adminDb.Id.ToString()),
+                        new Claim(ClaimTypes.Name, adminDb.Username),
                         new Claim(ClaimTypes.Role, adminDb.Role)
                     })};
 
@@ -124,13 +125,15 @@ namespace Services.Implementations
             Regex passwordRegex = new Regex("^(?=.*[0-9])(?=.*[a-z]).{6,20}$");
             return passwordRegex.Match(password).Success;
         }
-        public List<int> MakeDraw()
+        public List<int> MakeDraw(string adminId)
         {
+            bool isIdValid = int.TryParse(adminId, out int id);
+            _adminRepository.GetById(id);
             foreach (var item in _winningNumberRepository.GetAll())
             {
                 _winningNumberRepository.Delete(item);
             };
-            Admin admin = _adminRepository.GetById(1);
+            Admin admin = _adminRepository.GetById(id);
             List<int> drawNumbers = new List<int>();
             Session session = new Session();
             for (int i = 0; i <= 7 && i >= 1; i++)
@@ -183,7 +186,29 @@ namespace Services.Implementations
             _adminRepository.Update(admin);
             _sessionRepository.Insert(session);
             _drawRepository.Insert(draw);
+
             return drawNumbers;
+        }
+
+        public List<WinnerUserDTO> GetWinners(string adminId)
+        {
+            bool isIdValid = int.TryParse(adminId, out int id);
+            Admin admin = _adminRepository.GetById(id);
+            List<WinnerUserDTO> winnersList = new List<WinnerUserDTO>();
+            foreach(User user in admin.Users)
+            {
+                if (!String.IsNullOrEmpty(user.Prize))
+                {
+                    WinnerUserDTO winnerUser = new WinnerUserDTO()
+                    {
+                        Fullname = $"{user.FirstName} {user.LastName}",
+                        Prize = user.Prize
+                    };
+                    winnersList.Add(winnerUser);
+                }
+            }
+
+            return winnersList;
         }
     }
 }

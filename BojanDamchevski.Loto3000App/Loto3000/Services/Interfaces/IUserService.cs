@@ -8,6 +8,6 @@ namespace Services.Interfaces
     {
         void Register(RegisterUserDTO registerUserDTO);
         string Login(LoginUserDTO loginUserDTO);
-        void InsertNumbers(LotoNumbersDTO numbersChoice);
+        void InsertNumbers(LotoNumbersDTO numbersChoice,string userId);
     }
 }
